@@ -14,44 +14,6 @@
  *= require_self
  */
 @import "bootstrap";
-.telaLogin{
-  width: 30%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: rgba(50,50,50,.8);
-  padding: 40px;
-  border-radius: 10px;
-  font-family: "AmerType Md BT";
-  color: white;
-  text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
-}
-
-.telaLogin a{
-  text-decoration: none;
-  color: white;
-  text-align: center;
-}
-.menuLateral{
-  width: 15%;
-  height: 100%;
-  position: absolute;
-  margin-left: 0%;
-  background-color: rgba(50,50,50,.8)
-}
-.conteudo{
-  width: 85%;
-  position: absolute;
-  margin-left: 15%;
-}
-.background {
-  background-image: url('wallpapperprincipal.jpeg');
-  background-repeat:no-repeat;
-  background-size:100% 100%;
-  border: 1px solid #92b901;
-  display: block;
-  min-height: 100%;
-  min-width: 100%;
+body{
+  background-color: #999999;
 }
