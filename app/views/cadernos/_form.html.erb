@@ -12,13 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :titulo %>
-    <%= form.text_field :titulo, id: :caderno_titulo %>
+    <%= form.text_field :titulo, id: :caderno_titulo, :placeholder => "Titulo" %>
   </div>
 
   <div class="field">
-    <%= form.label :conteudo %>
-    <%= form.cktext_area :conteudo, id: :caderno_conteudo %>
+    <%= form.cktext_area :conteudo, id: :caderno_conteudo, ckeditor: {
+    language: 'pt',
+    uiColor: '#CCCCCC' }
+ %>
   </div>
 
   <div class="actions">
