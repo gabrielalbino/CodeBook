@@ -1,0 +1,2 @@
+module CadernosHelper
+end

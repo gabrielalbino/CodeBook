@@ -1,0 +1,2 @@
+class Caderno < ApplicationRecord
+end

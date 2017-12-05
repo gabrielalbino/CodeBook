@@ -1,0 +1,27 @@
+<%= form_with(model: caderno, local: true) do |form| %>
+  <% if caderno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(caderno.errors.count, "error") %> prohibited this caderno from being saved:</h2>
+
+      <ul>
+      <% caderno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :caderno_titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :conteudo %>
+    <%= form.cktext_area :conteudo, id: :caderno_conteudo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
