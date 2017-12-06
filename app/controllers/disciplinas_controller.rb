@@ -10,25 +10,29 @@ class DisciplinasController < ApplicationController
   # GET /disciplinas/1
   # GET /disciplinas/1.json
   def show
+    @disciplinas = Disciplina.all
   end
 
   # GET /disciplinas/new
   def new
+    @disciplinas = Disciplina.all
     @disciplina = current_user.disciplinas.build
   end
 
   # GET /disciplinas/1/edit
   def edit
+    @disciplinas = Disciplina.all
   end
 
   # POST /disciplinas
   # POST /disciplinas.json
   def create
+    @disciplinas = Disciplina.all
     @disciplina = current_user.disciplinas.build(disciplina_params)
 
     respond_to do |format|
       if @disciplina.save
-        format.html { redirect_to @disciplina, notice: 'Disciplina was successfully created.' }
+        format.html { redirect_to @disciplina, notice: 'Disciplina foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @disciplina }
       else
         format.html { render :new }
@@ -40,9 +44,10 @@ class DisciplinasController < ApplicationController
   # PATCH/PUT /disciplinas/1
   # PATCH/PUT /disciplinas/1.json
   def update
+    @disciplinas = Disciplina.all
     respond_to do |format|
       if @disciplina.update(disciplina_params)
-        format.html { redirect_to @disciplina, notice: 'Disciplina was successfully updated.' }
+        format.html { redirect_to @disciplina, notice: 'Disciplina atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @disciplina }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class DisciplinasController < ApplicationController
   def destroy
     @disciplina.destroy
     respond_to do |format|
-      format.html { redirect_to disciplinas_url, notice: 'Disciplina was successfully destroyed.' }
+      format.html { redirect_to disciplinas_url, notice: 'Disciplina foi excluida com sucesso.' }
       format.json { head :no_content }
     end
   end

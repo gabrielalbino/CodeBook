@@ -1,10 +1,6 @@
-<div class = nomePrincipal>
-<h1>CodeBook</h1>
-</div>
-
 <div class = telaLogin>
   <div class="container">
-      <h2 class="form-signin-heading">Registro: </h2>
+      <h1 style = "font-size: 50px; text-align: center">CodeBook</h1>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
           <%= f.email_field :email, autofocus: true, id: 'inputEmail', class: 'form-control', placeholder: 'Email' %><br />

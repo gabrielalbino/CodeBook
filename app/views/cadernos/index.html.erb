@@ -1,22 +1,22 @@
-
 <div id = "wrapper">
   <!-- sidebar -->
   <div id = "sidebar-wrapper">
     <ul class = "sidebar-nav">
       <li><%= image_tag("avatar.jpeg", class:'rounded-circle') %></li>
-      <li><a href = "#1">Link 1</a></li>
-      <li><a href = "#2">Link 2</a></li>
+      <% @disciplinas.each do |disciplina| %>
+        <% if disciplina.user == current_user %>
+          <li><%= link_to disciplina.nome, disciplina %></li>
+        <% end %>
+      <% end %>
+      <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
       <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
     </ul>
   </div>
-
   <!-- content -->
   <div id = "page-content-wrapper">
     <div class = "container-fluid">
       <div class = "column-lg-12">
-        <a href = "" class = "btn btn-dark" id = "menu-toggle">Toggle Menu</a>
         <h1>Cadernos</h1>
-
         <table>
           <thead>
             <tr>
@@ -25,7 +25,6 @@
               <th colspan="3"></th>
             </tr>
           </thead>
-
           <tbody>
             <% @cadernos.each do |caderno| %>
               <tr>
@@ -38,15 +37,8 @@
             <% end %>
           </tbody>
         </table>
-
         <%= link_to 'New Caderno', new_caderno_path %>
       </div>
     </div>
   </div>
 </div>
-<script>
-  $("#menu-toggle").click( function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("menuDisplayed");
-  });
-</script>
