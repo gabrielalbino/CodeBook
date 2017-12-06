@@ -15,6 +15,20 @@
   </head>
 
   <body>
+    <% if notice %>
+      <div class="alert alert-secondary" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-secondary" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
     <!-- <div class = menuLateral>
       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
