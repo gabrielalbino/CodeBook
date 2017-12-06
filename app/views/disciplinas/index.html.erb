@@ -14,11 +14,13 @@
   <tbody>
     <% @disciplinas.each do |disciplina| %>
       <tr>
+        <% if disciplina.user == current_user %>
         <td><%= disciplina.nome %></td>
         <td><%= disciplina.user.email %></td>
         <td><%= link_to 'Show', disciplina %></td>
         <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
         <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

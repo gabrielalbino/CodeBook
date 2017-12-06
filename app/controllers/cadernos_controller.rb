@@ -1,6 +1,6 @@
 class CadernosController < ApplicationController
   before_action :set_caderno, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /cadernos
   # GET /cadernos.json
   def index
@@ -27,7 +27,7 @@ class CadernosController < ApplicationController
     @caderno = Caderno.new(caderno_params)
 
     respond_to do |format|
-      
+
       if @caderno.save
         format.html { redirect_to @caderno, notice: 'Caderno was successfully created.' }
         format.json { render :show, status: :created, location: @caderno }
