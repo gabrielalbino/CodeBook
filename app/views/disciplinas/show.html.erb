@@ -1,9 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div id = "wrapper">
+  <!-- sidebar -->
+  <div id = "sidebar-wrapper">
+    <ul class = "sidebar-nav">
+      <li><%= image_tag("avatar.jpeg", class:'rounded-circle') %></li>
+      <li><a href = "#1">Link 1</a></li>
+      <li><a href = "#2">Link 2</a></li>
+      <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
+    </ul>
+  </div>
+  <!-- content -->
+  <div id = "page-content-wrapper">
+    <div class = "container-fluid">
+      <div class = "column-lg-12">
+        <a href = "" class = "btn btn-dark" id = "menu-toggle">Toggle Menu</a>
+          <p>
+            <strong>Nome:</strong>
+            <%= @disciplina.nome %>
+          </p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @disciplina.nome %>
-</p>
-
-<%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |
-<%= link_to 'Back', disciplinas_path %>
+          <%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |
+          <%= link_to 'Back', disciplinas_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("#menu-toggle").click( function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("menuDisplayed");
+    });
+  </script>
