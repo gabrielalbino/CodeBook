@@ -11,6 +11,7 @@ class CadernosController < ApplicationController
   # GET /cadernos/1
   # GET /cadernos/1.json
   def show
+    @disciplinas = Disciplina.all
   end
 
   # GET /cadernos/new

@@ -15,7 +15,7 @@
  */
 @import "bootstrap";
 body{
-  background-color: #999999;
+  background-color: #666666 ;
 }
 /*
  * Base structure
@@ -32,30 +32,30 @@ body{
    top: 50%;
    -webkit-transform: translate(-50%, -50%);
    transform: translate(-50%, -50%);
-   background-color: rgba(0,0,0,.8);
+   background-color: rgba(32,37,41,1);
    padding: 40px;
    border-radius: 10px;
    font-family: "AmerType Md BT";
-   color: white;
+   color: #e5e5e5;
    text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
  }
 
  .telaLogin a{
    text-decoration: none;
-   color: white;
+   color: #e5e5e5;
    text-align: center;
 }
 /*sidebar*/
 
   #msgAlerts{
-    background: rgba(0,0,0,.8);
+    background: rgba(32,37,41,1);
     right: 0;
     bottom: 0;
     position: absolute;
     width: 40%;
     height: 30px;
     text-align: center;
-    color: white;
+    color: #e5e5e5;
     vertical-align: center;
     display:inline;
     border-radius: 5px;
@@ -64,18 +64,26 @@ body{
 #sidebar-wrapper{
   z-index: 1;
   position: absolute;
-  width: 250px;
+  width: 20%;
   height: 100%;
   overflow-y: hidden;
-  background: rgba(0,0,0,.8);
+  background: rgba(32,37,41,1);
   opacity: 0.9;
 }
 
+.image-upload > input
+{
+   display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}
+
 #page-content-wrapper{
-  width: 100%;
+  width: 80%;
   position:absolute;
   padding:15px;
-  padding-left:250px;
+  margin-left:20%;
 }
 
 .sidebar-nav{
@@ -102,5 +110,9 @@ body{
 
 
 .sidebar-nav li a:hover{
-  background: #999999;
+  background: #b9a88e;
 }
+
+.btn btn-light{
+  background: #b9a88e;
+} 

@@ -7,7 +7,7 @@
           <%= f.password_field :password, autocomplete: "off", id: 'inputPassword', class: 'form-control' , placeholder: 'Senha (' + @minimum_password_length.to_s + ' caracteres no mínimo)'%><br />
           <%= f.password_field :password_confirmation, autocomplete: "off", id: 'inputPassword', class: 'form-control' , placeholder: 'Confirme sua senha'%><br />
           <div class="actions">
-            <%= f.submit "Registrar", class: 'btn btn-lg btn-secondary btn-block' %>
+            <%= f.submit "Registrar", class: 'btn btn-lg btn-light btn-block', style:'background: #b9a88e' %>
           </div>
         <% end %>
 

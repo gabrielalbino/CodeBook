@@ -9,19 +9,37 @@
         <% end %>
       <% end %>
       <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
-      <li><%= link_to 'Criar caderno', new_caderno_path %></li>
       <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
     </ul>
   </div>
   <!-- content -->
   <div id = "page-content-wrapper">
     <div class = "container-fluid">
-      <div class = "column-lg-12">
-        <p style = "font-size: 20px">
-          <strong>Nome da disciplina:</strong>
-          <%= @disciplina.nome %>
-        </p>
-        <%= link_to 'Editar', edit_disciplina_path(@disciplina), class:"btn btn-light" %>
+      <div class = "column-lg-12", style = "width: 80%; margin: 0 auto">
+        <table class="table">
+          <thead class="thead-dark", style = "background: #b9a88e">
+            <tr>
+              <th scope ="col" colspan="3">Disciplina: <%= @disciplina.nome %> (<%= link_to 'Editar', edit_disciplina_path(@disciplina), style: "text-decoration: none; color: #e5e5e5" %>) </th>
+            </tr>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome do caderno</th>
+              <th scope="col">Dono</th>
+            </tr>
+          </thead>
+          <tbody style = "color: #e5e5e5">
+            <tr>
+              <th scope="row">1</th>
+              <td>caderno 1</td>
+              <td>teste@teste.com</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>caderno 2</td>
+              <td>amigo@teste.com</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
