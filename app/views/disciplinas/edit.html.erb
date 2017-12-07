@@ -18,6 +18,8 @@
       <div class = "column-lg-12">
         <h4>Editando Disciplina</h4>
         <%= render 'form', disciplina: @disciplina %>
+        <%= link_to 'Excluir', disciplina_path(@disciplina),
+                    method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:"btn btn-danger", style: "color: white; padding: 10px; margin-top: 15px" %>
       </div>
     </div>
   </div>

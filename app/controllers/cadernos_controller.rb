@@ -16,7 +16,7 @@ class CadernosController < ApplicationController
 
   # GET /cadernos/new
   def new
-    @caderno = Caderno.new
+    @caderno = Caderno.new(disciplina_id: params[:disciplina_id])
     @disciplinas = Disciplina.all
   end
 
@@ -63,7 +63,7 @@ class CadernosController < ApplicationController
   def destroy
     @caderno.destroy
     respond_to do |format|
-      format.html { redirect_to cadernos_url, notice: 'Caderno foi excluido com sucesso.' }
+      format.html { redirect_to disciplina_path(@caderno.disciplina), notice: 'Caderno foi excluido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -76,6 +76,6 @@ class CadernosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def caderno_params
-      params.require(:caderno).permit(:titulo, :conteudo)
+      params.require(:caderno).permit(:titulo, :conteudo, :disciplina_id)
     end
 end

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20171206140126) do
     t.text "conteudo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "discipline_id"
+    t.integer "disciplina_id"
   end
 
   create_table "disciplinas", force: :cascade do |t|

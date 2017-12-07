@@ -16,27 +16,31 @@
   <div id = "page-content-wrapper">
     <div class = "container-fluid">
       <div class = "column-lg-12", style = "width: 80%; margin: 0 auto">
-        <table class="table">
-          <thead class="thead-dark", style = "background: #b9a88e">
+        <table class="table table-hover table-dark">
+          <thead>
             <tr>
-              <th scope ="col" colspan="3">Disciplina: <%= @disciplina.nome %> (<%= link_to 'Editar', edit_disciplina_path(@disciplina), style: "text-decoration: none; color: #e5e5e5" %>) </th>
+              <th scope ="col" colspan="3" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px">Disciplina: <%= @disciplina.nome %> (<%= link_to 'Editar', edit_disciplina_path(@disciplina), style: "text-decoration: none; color: #e5e5e5" %>) </th>
             </tr>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nome do caderno</th>
-              <th scope="col">Dono</th>
+              <th scope="col" style = "background: rgba(32,37,41,1)">#</th>
+              <th scope="col" style = "background: rgba(32,37,41,1)">Nome do caderno</th>
+              <th scope="col" style = "background: rgba(32,37,41,1)">Dono</th>
             </tr>
           </thead>
           <tbody style = "color: #e5e5e5">
-            <tr>
-              <th scope="row">1</th>
-              <td>caderno 1</td>
-              <td>teste@teste.com</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>caderno 2</td>
-              <td>amigo@teste.com</td>
+            <% @cadernos.each do |caderno| %>
+              <% if caderno.disciplina_id == @disciplina.id %>
+                <tr data-link="<%= caderno_path(caderno) %>">
+                  <th scope="row"><%= @contador %></th>
+                  <% @contador = @contador + 1; %>
+                  <td><%= caderno.titulo %></td>
+                  <td><%= caderno.disciplina.user.email %></td>
+                </tr>
+              <% end %>
+            <% end %>
+            <tr data-link="<%=new_caderno_path(disciplina_id: @disciplina.id) %>" >
+                <th scope="row">✎</th>
+                <td colspan ="2">Criar caderno</td>
             </tr>
           </tbody>
         </table>
@@ -44,3 +48,8 @@
     </div>
   </div>
 </div>
+<script>
+$("tr[data-link]").click(function() {
+  window.location = $(this).data("link")
+})
+</script>
