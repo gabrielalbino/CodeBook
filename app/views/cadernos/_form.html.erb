@@ -10,19 +10,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.text_field :titulo, id: :caderno_titulo, :placeholder => "Titulo" %>
-  </div>
-
-  <div class="field">
-    <%= form.cktext_area :conteudo, id: :caderno_conteudo, ckeditor: {
-    language: 'pt',
-    uiColor: '#CCCCCC' }
- %>
-  </div>
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope ="col" colspan="3" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px" style: "text-decoration: none; color: #e5e5e5">Novo caderno </th>
+      </tr>
+      <tr>
+        <th scope="col" style = "background: rgba(32,37,41,1)">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1" style = "background: #b9a88e">Titulo</span>
+            <%= form.text_field :titulo, id: :caderno_titulo, class:"form-control" %>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody style = "color: #e5e5e5">
+      <tr data-link="#">
+        <td>
+              <%= form.cktext_area :conteudo, id: :caderno_conteudo, ckeditor: {
+                language: 'pt',
+                uiColor: '#b9a88e' }
+              %>
+        </td>
+      </tr>
+      <tr data-link="#" >
+        <td colspan ="2" class="text-right"><%= form.submit'Enviar', class: 'btn btn-md btn-light', style:'background: #b9a88e' %></td>
+      </tr>
+    </tbody>
+  </table>
   <%= form.hidden_field :disciplina_id %>
   <div class="actions">
-    <%= form.submit'Enviar', class: 'btn btn-lg btn-light btn-block', style:'background: #b9a88e'  %>
+
   </div>
 <% end %>

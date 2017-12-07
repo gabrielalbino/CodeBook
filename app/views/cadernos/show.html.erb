@@ -16,17 +16,33 @@
   <div id = "page-content-wrapper">
     <div class = "container-fluid">
       <div class = "column-lg-12">
-        <p>
-          <strong>Titulo:</strong>
-          <%= @caderno.titulo %>
-        </p>
-        <p>
-          <strong>Conteudo:</strong>
-          <%= @caderno.conteudo.html_safe %>
-        </p>
-        <%= link_to 'Edit', edit_caderno_path(@caderno), class: 'btn btn-lg btn-light btn-block', style:'background: #b9a88e' %>
-        <%= link_to 'Back', disciplina_path(@caderno.disciplina), class: 'btn btn-lg btn-light btn-block', style:'background: #b9a88e' %>
-        <%= link_to 'Excluir', caderno_path(@caderno), method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:"btn btn-danger", style: "color: white; padding: 10px; margin-top: 15px" %>
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th scope ="col" colspan="3" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px" style: "text-decoration: none; color: #e5e5e5">Titulo: <%= @caderno.titulo %></th>
+            </tr>
+            <tr>
+              <th scope="col" style = "background: rgba(32,37,41,1)">
+                <div class="input-group">
+                  <div class = "conteudo rounded">
+                  <%= @caderno.conteudo.html_safe %>        
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody style = "color: #e5e5e5">
+            <tr data-link="#">
+              <td class = "text-right">
+              <%= link_to 'Edit', edit_caderno_path(@caderno), class: 'btn btn-sm btn-light', style:'color: black; background: #b9a88e' %>
+              <%= link_to 'Back', disciplina_path(@caderno.disciplina), class: 'btn btn-sm btn-light', style:'color: black; background: #b9a88e' %> <br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class = "text-right">
+        <%= link_to 'Excluir', caderno_path(@caderno), method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:"btn btn-sm btn-danger", style: "color: white; padding: 10px; margin-top: 15px" %>
+        </div>
       </div>
     </div>
   </div>
