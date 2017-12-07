@@ -8,17 +8,16 @@
           <li><%= link_to disciplina.nome, disciplina %></li>
         <% end %>
       <% end %>
-      <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
+      <li><%= link_to 'Criar disciplina', new_disciplina_path, { 'data-toggle' => 'modal', 'data-target' => '#myModal' } %></li>
       <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
     </ul>
   </div>
   <!-- content -->
   <div id = "page-content-wrapper">
     <div class = "container-fluid">
-      <div class = "column-lg-12">
-        <h1>New Disciplina</h1>
+      <div class = "column-xs-12">
+        <h4>Criar nova disciplina:</h4>
         <%= render 'form', disciplina: @disciplina %>
-        <%= link_to 'Back', disciplinas_path %>
       </div>
     </div>
   </div>

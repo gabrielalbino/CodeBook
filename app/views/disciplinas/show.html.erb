@@ -9,6 +9,7 @@
         <% end %>
       <% end %>
       <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
+      <li><%= link_to 'Criar caderno', new_caderno_path %></li>
       <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
     </ul>
   </div>
@@ -16,14 +17,12 @@
   <div id = "page-content-wrapper">
     <div class = "container-fluid">
       <div class = "column-lg-12">
-        <p>
-          <strong>Nome:</strong>
+        <p style = "font-size: 20px">
+          <strong>Nome da disciplina:</strong>
           <%= @disciplina.nome %>
         </p>
-        <%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |
-        <%= link_to 'Back', disciplinas_path %> |
-        <%= link_to 'Destroy', @disciplina, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Editar', edit_disciplina_path(@disciplina), class:"btn btn-light" %>
       </div>
     </div>
   </div>
-</div>  
+</div>
