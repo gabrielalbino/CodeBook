@@ -10,10 +10,22 @@
       </ul>
     </div>
   <% end %>
-    <label class="sr-only" for="inlineFormInputName2">Name</label>
-    <%= form.text_field :nome, id: 'inlineFormInputName2', class:"form-control mb-2 mr-sm-2 mb-sm-0" %>
-
-    <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-      <%= form.submit'Enviar', class: 'btn btn-lg btn-light btn-block', style:'background: #b9a88e' %>
-    </div>
+<table class="table table-hover table-dark" style= "width: 80%; margin: 0 auto">
+  <thead>
+    <tr>
+      <th scope ="col" colspan="3" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px" style: "text-decoration: none; color: #e5e5e5">Disciplina </th>
+    </tr>
+    <tr>
+      <th scope="col" style = "background: rgba(32,37,41,1)">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1" style = "background: #b9a88e; color: black">Titulo</span>
+          <%= form.text_field :nome, id: :caderno_titulo, class:"form-control" %>
+        </div>
+      </th>
+    </tr>
+  </thead>
+</table>
+<div class = "container text-right" style = "width: 80%; padding-top: 15px">
+<%= form.submit'Enviar', class: 'btn btn-md btn-light', style:'background: rgba(32,37,41,1); color: white' %>
+</div>
 <% end %>

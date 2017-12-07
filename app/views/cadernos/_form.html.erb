@@ -18,7 +18,7 @@
       <tr>
         <th scope="col" style = "background: rgba(32,37,41,1)">
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1" style = "background: #b9a88e">Titulo</span>
+            <span class="input-group-addon" id="basic-addon1" style = "background: #b9a88e; color: black">Titulo</span>
             <%= form.text_field :titulo, id: :caderno_titulo, class:"form-control" %>
           </div>
         </th>
@@ -34,7 +34,10 @@
         </td>
       </tr>
       <tr data-link="#" >
-        <td colspan ="2" class="text-right"><%= form.submit'Enviar', class: 'btn btn-md btn-light', style:'background: #b9a88e' %></td>
+        <td colspan ="2" class="text-right">
+        <%= form.submit'Enviar', class: 'btn btn-md btn-light', style:'background: #b9a88e' %>
+        <%= link_to 'Voltar',  disciplina_path(@caderno.disciplina), class: 'btn btn-md btn-light', style:'background: #b9a88e; color: black' %>  
+        </td>
       </tr>
     </tbody>
   </table>

@@ -24,7 +24,43 @@
         <%= alert %>
       </div>
     <% end %>
+    <% if(user_signed_in?) %>
+    <div id = "wrapper">
+    <!-- navbar-->
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Navbar</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+    <!-- sidebar -->
+    <div id = "sidebar-wrapper">
+      <ul class = "sidebar-nav">
+        <li><%= image_tag("avatar.jpeg", class:'rounded-circle') %></li>
+        <% @disciplinas.each do |disciplina| %>
+          <% if disciplina.user == current_user %>
+            <li><%= link_to disciplina.nome, disciplina %></li>
+          <% end %>
+        <% end %>
+        <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
+        <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
+      </ul>
+    </div>
+    <!-- content -->
+    <div id = "page-content-wrapper">
+      <div class = "container-fluid">
+        <div class = "column-lg-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <% else %>
     <%= yield %>
+    <% end %>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

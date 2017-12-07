@@ -1,26 +1,4 @@
-<div id = "wrapper">
-  <!-- sidebar -->
-  <div id = "sidebar-wrapper">
-    <ul class = "sidebar-nav">
-      <li><%= image_tag("avatar.jpeg", class:'rounded-circle') %></li>
-      <% @disciplinas.each do |disciplina| %>
-        <% if disciplina.user == current_user %>
-          <li><%= link_to disciplina.nome, disciplina %></li>
-        <% end %>
-      <% end %>
-      <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
-      <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
-    </ul>
-  </div>
-  <!-- content -->
-  <div id = "page-content-wrapper">
-    <div class = "container-fluid">
-      <div class = "column-lg-12">
-        <h4>Editando Disciplina</h4>
-        <%= render 'form', disciplina: @disciplina %>
-        <%= link_to 'Excluir', disciplina_path(@disciplina),
-                    method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:"btn btn-danger", style: "color: white; padding: 10px; margin-top: 15px" %>
-      </div>
-    </div>
-  </div>
+<%= render 'form', disciplina: @disciplina %>
+<div class = "container text-right" style = "width:80%; margin: 0 auto">
+<%= link_to 'Excluir', disciplina_path(@disciplina), method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' }, class:"btn btn-danger btn-sm", style: "color: white; padding: 10px; margin-top: 15px" %>
 </div>
