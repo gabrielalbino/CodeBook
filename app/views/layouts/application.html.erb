@@ -37,7 +37,7 @@
     <!-- sidebar -->
     <div id = "sidebar-wrapper">
       <ul class = "sidebar-nav">
-        <li><%= image_tag("avatar.jpeg", class:'rounded-circle') %></li>
+        <li><%= image_tag(current_user.avatar, class:'rounded-circle') %></li>
         <% @disciplinas.each do |disciplina| %>
           <% if disciplina.user == current_user %>
             <li><%= link_to disciplina.nome, disciplina %></li>
