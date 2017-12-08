@@ -8,7 +8,5 @@ class ApplicationController < ActionController::Base
    	user_params.permit({ roles: [] }, :email, :password, :password_confirmation, :username, :avatar)
   end
 
-  def application
-  end
 end
 end

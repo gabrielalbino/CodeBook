@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	
+  match '/users',   to: 'users#index',   via: 'get'		
   devise_for :users
   resources :disciplinas
   root 'disciplinas#index'

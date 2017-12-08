@@ -1,0 +1,52 @@
+	<% @usuario.each do |usuarioAtual| %>
+		<% if usuarioAtual.username == @username %>
+			<% @usuario_existe = true %>
+			<table class="table table-hover table-dark rounded" style = "width: 80%; margin: 0 auto">
+			<thead>
+			  <tr>
+			    <th scope ="col" colspan="3" class = "rounded" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px">Usuário: <%= usuarioAtual.username %> </th>
+			  </tr>
+			</thead>
+			<% @disciplinas.each do |disciplina| %>
+			    <% if disciplina.user.username == usuarioAtual.username %>
+			      <% @contadorDisciplinas = @contadorDisciplinas+1 %>
+			    <% end %>
+			<% end %>
+			<% if @contadorDisciplinas == 0 %>
+			<thead>
+			    <th colspan ="3">O usuário não possui nenhuma disciplina cadastrada.</td>
+			</thead>
+			<%else%>
+				<% @disciplinas.each do |disciplina| %>
+					<% @contadorCadernos = 0 %>
+				    <% if disciplina.user.username == usuarioAtual.username %>
+				  		<tr>
+				  			<thead>
+				  				<th colspan ="3">Disciplina: <%= disciplina.nome %></td>
+				  			</thead>
+				  		</tr>
+			  			<% @cadernos.each do |caderno| %>
+						    <% if caderno.disciplina_id == disciplina.id %>
+						      <% @contadorCadernos = @contadorCadernos+1 %>
+						    <% end %>
+						<% end %>
+						<% if @contadorCadernos == 0 %>
+						<tr style = "background: #32383e">
+						    	<td colspan ="3">O usuário não possui nenhum caderno nessa disciplina.</td>
+						</tr>
+						<%else%>				
+							<% @cadernos.each do |caderno| %>
+							    <% if caderno.disciplina_id == disciplina.id %>
+							    <tr style = "background: #32383e">
+
+							     	<td colspan ="1" class = "align-middle">Caderno: <%= caderno.titulo %></td>
+							     	<td align = "right"><a class = "btn btn-light btn-sm" style = 'color: black; background: #b9a88e'> pedir acesso</a></td>
+							     <tr>
+							    <% end %>
+							<%end %>
+						<% end %> 
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>
