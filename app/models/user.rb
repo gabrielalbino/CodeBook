@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :disciplinas
   validates_uniqueness_of :username
+  validates :username, :avatar, presence: true, allow_blank: false
 end

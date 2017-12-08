@@ -57,20 +57,22 @@ div {
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  width: 300px;
+  border: 2px solid black;
   padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgba(32,37,41,1);;
+  color: #e5e5e5;
   h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    background-color: #b9a88e;
+    color: #e5e5e5;
   }
 
   ul li {
