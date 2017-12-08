@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caderno_id: 1
+  user_dest: 1
+  user_orig: 1
+
+two:
+  caderno_id: 1
+  user_dest: 1
+  user_orig: 1

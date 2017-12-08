@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  match '/users',   to: 'users#index',   via: 'get'		
+  match '/users',   to: 'users#index',   via: 'get'
   devise_for :users
+  resources :pedidos
   resources :disciplinas
   root 'disciplinas#index'
   resources :cadernos

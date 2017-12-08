@@ -29,7 +29,11 @@
     <!-- navbar-->
     <nav class="navbar navbar-dark justify-content-between border border-left-0 border-dark navbar-fixed-top" style = "background: rgba(32,37,41,1)">
       <a></a>
-      <a class="navbar-brand" style = "color: #e5e5e5; padding-left: 5%   ">Bem vindo, <%= current_user.username %> </a>
+      <% @contador = Pedido.where(user_orig: current_user.id).count %>
+      <a href = <%= pedidos_path %> class="navbar-brand" style = "color: #e5e5e5; padding-left: 5%   ">Bem vindo, <%= current_user.username %>
+      <% if @contador != 0 %>
+      <strong>(<%= @contador %>)</strong>
+      <% end %></a>
       <%= form_tag(users_path, method: 'get', class:"form-inline") do %>
         <%= text_field_tag(:search, params[:search], class:"form-control mr-sm-2", :placeholder => "Insira um usuário") %>
         <%= submit_tag("Search", class: 'btn btn-md btn-light', style:'color: black; background: #b9a88e') %>
@@ -45,7 +49,7 @@
           <% if disciplina.user == current_user %>
             <% @contador = @contador + 1 %>
           <% end %>
-        <% end %>        
+        <% end %>
         <% if @contador == 0 %>
           <li><p style = "color: #e5e5e5; padding: 0; padding-bottom: 10px; padding-top: 10px; margin: 0 auto">Não há disciplinas cadastradas</p></li>
         <% end %>

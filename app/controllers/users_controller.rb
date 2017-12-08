@@ -4,9 +4,13 @@ class UsersController < ApplicationController
 		@cadernos = Caderno.all
 		@username = params[:search].downcase
 		@usuario = User.all
-		@contadorDisciplinas = 0;
-		@contadorCadernos = 0;
+		@contadorDisciplinas = 0
+		@contadorCadernos = 0
 		@usuario_existe = false
+		@pedido = Pedido.new()
 	end
+
+
+
 
 end

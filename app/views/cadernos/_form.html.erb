@@ -33,16 +33,13 @@
               %>
         </td>
       </tr>
+      <%= form.hidden_field :disciplina_id %>
       <tr data-link="#" >
         <td colspan ="2" class="text-right">
         <%= form.submit'Enviar', class: 'btn btn-md btn-light', style:'background: #b9a88e' %>
-        <%= link_to 'Voltar',  disciplina_path(@caderno.disciplina), class: 'btn btn-md btn-light', style:'background: #b9a88e; color: black' %>  
+        <%= link_to 'Voltar',  disciplina_path(@caderno.disciplina), class: 'btn btn-md btn-light', style:'background: #b9a88e; color: black' %>
         </td>
       </tr>
     </tbody>
   </table>
-  <%= form.hidden_field :disciplina_id %>
-  <div class="actions">
-
-  </div>
 <% end %>

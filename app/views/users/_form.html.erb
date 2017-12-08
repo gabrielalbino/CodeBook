@@ -1,0 +1,6 @@
+<%= form_with(model: pedido, local: true) do |form| %>
+  <%= form.hidden_field :caderno_id, :value => cadernoid  %>
+  <%= form.hidden_field :user_dest, :value => current_userid %>
+  <%= form.hidden_field :user_orig, :value => usuarioAtualid %>
+  <td align = "right"><%= form.submit'Pedir acesso', class: 'btn btn-md btn-light', style:'background: #b9a88e' %> <tr>
+<% end %>

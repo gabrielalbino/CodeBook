@@ -1,0 +1,28 @@
+<% @pedidos = Pedido.where(user_orig: current_user.id)%>
+
+<table class="table table-hover table-dark" style = "width: 80%; margin: 0 auto">
+<thead>
+  <tr>
+    <th scope ="col" colspan="2" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px">Notificações: <%= @pedidos.count %> </th>
+  </tr>
+  <% if @pedidos.count == 0 %>
+    <td colspan ="3">Não há novas notificações.</td>
+  <%else%>
+  <tr>
+    <th scope="col" style = "background: rgba(32,37,41,1)">Notificação</th>
+    <th scope="col" style = "background: rgba(32,37,41,1)">Ação</th>
+  </tr>
+  <%end%>
+</thead>
+<tbody style = "color: #e5e5e5">
+  <% @pedidos.each do |pedido| %>
+      <tr>
+        <td>O usuário <%= User.find(pedido.user_dest).username %> está pedindo seu caderno <%= Caderno.find(pedido.caderno_id).titulo %> emprestado.</td>
+        <td align = "right">
+          <%= link_to 'Emprestar', class: 'btn btn-md btn-light', style:'color: black; background: #b9a88e; margin-right: 20px' %>
+          <%= link_to 'Não emprestar', pedido_path(pedido), method: :delete, class: 'btn btn-md btn-light', style:'color: black; background: red' %>
+      </td>
+      </tr>
+  <% end %>
+</tbody>
+</table>
