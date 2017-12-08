@@ -35,10 +35,19 @@
       </form>
     </nav>
     <!-- sidebar -->
+    <% @contador = 0 %>
     <div id = "sidebar-wrapper">
       <ul class = "sidebar-nav">
         <li><p class="navbar-brand" style = "color: #e5e5e5; padding-left: 5%   "><strong>Code</strong>Book</p></li>
         <li><%= image_tag(current_user.avatar, class:'rounded-circle') %></li>
+        <% @disciplinas.each do |disciplina| %>
+          <% if disciplina.user == current_user %>
+            <% @contador = @contador + 1 %>
+          <% end %>
+        <% end %>        
+        <% if @contador == 0 %>
+          <li><p style = "color: #e5e5e5; padding: 0; padding-bottom: 10px; padding-top: 10px; margin: 0 auto">Não há disciplinas cadastradas</p></li>
+        <% end %>
         <% @disciplinas.each do |disciplina| %>
           <% if disciplina.user == current_user %>
             <li><%= link_to disciplina.nome, disciplina %></li>

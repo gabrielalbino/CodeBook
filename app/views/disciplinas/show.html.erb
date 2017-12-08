@@ -3,13 +3,24 @@
   <tr>
     <th scope ="col" colspan="3" style = "background: rgba(32,37,41,1); border-top-left-radius: 5px; border-top-right-radius: 5px">Disciplina: <%= @disciplina.nome %> (<%= link_to 'Editar', edit_disciplina_path(@disciplina), style: "text-decoration: none; color: #e5e5e5" %>) </th>
   </tr>
+  <% @cadernos.each do |caderno| %>
+    <% if caderno.disciplina_id == @disciplina.id %>
+      <% @contador = @contador+1 %>
+    <% end %>
+  <% end %>
+  <% if @contador == 1 %>
+    <td colspan ="3">Não há disciplinas cadastradas.</td>
+  <%else%>
   <tr>
     <th scope="col" style = "background: rgba(32,37,41,1)">#</th>
     <th scope="col" style = "background: rgba(32,37,41,1)">Nome do caderno</th>
     <th scope="col" style = "background: rgba(32,37,41,1)">Dono</th>
   </tr>
+  <%end%>
 </thead>
 <tbody style = "color: #e5e5e5">
+
+  <% @contador = 1 %>
   <% @cadernos.each do |caderno| %>
     <% if caderno.disciplina_id == @disciplina.id %>
       <tr data-link="<%= caderno_path(caderno) %>">
