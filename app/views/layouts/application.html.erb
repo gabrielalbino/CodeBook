@@ -4,6 +4,7 @@
     <style>
 
     </style>
+    <%= favicon_link_tag 'logofinal.jpg' %>
     <title>CodeBook</title>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
@@ -60,6 +61,9 @@
         <% end %>
         <li><%= link_to 'Criar disciplina', new_disciplina_path %></li>
         <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
+      <li style = "margin: 0px; padding-top: 20%  ">
+        <%= image_tag "logotransp.png" %>
+      </li>
       </ul>
     </div>
     <!-- content -->

@@ -14,7 +14,9 @@
  *= require_self
  */
 @import "bootstrap";
-
+.style_image {
+  margin:0 auto
+}
 .bg{
   background: rgba(32,37,41,1);
 }
@@ -34,6 +36,16 @@ body{
  body{
   font-family: "AmerType Md BT";
  }
+
+.editarUsuario{
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-family: "AmerType Md BT";
+  color: #e5e5e5;
+  background-color: rgba(32,37,41,1);
+  text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+}
 
  .telaLogin{
    width: 30%;
@@ -128,4 +140,4 @@ body{
 
 .btn btn-light{
   background: #b9a88e;
-} 
+}
