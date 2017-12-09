@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.permit(:sign_up) do |user_params|
    	  user_params.permit({ roles: [] }, :email, :password, :password_confirmation, :username, :avatar)
    end
-    devise_parameter_sanitizer.permit(:edit) do |user_params|
-   	  user_params.permit({ roles: [] }, :email, :password, :password_confirmation, :avatar)
+    devise_parameter_sanitizer.permit(:account_update) do |user_params|
+   	  user_params.permit({ roles: [] }, :email, :password, :current_password, :password_confirmation, :avatar)
     end
 
   end
