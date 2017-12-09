@@ -45,7 +45,7 @@
     <div id = "sidebar-wrapper">
       <ul class = "sidebar-nav">
         <li><p class="navbar-brand" style = "color: #e5e5e5; padding-left: 5%   "><strong>Code</strong>Book</p></li>
-        <li><%= image_tag(current_user.avatar, class:'rounded-circle') %></li>
+          <li><%= link_to(image_tag(current_user.avatar, class:'rounded-circle'), edit_user_registration_path)%></li>
         <% Disciplina.all.each do |disciplina| %>
           <% if disciplina.user == current_user %>
             <% @contador = @contador + 1 %>

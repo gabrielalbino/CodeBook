@@ -30,7 +30,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :Atual_senha %> <i>(Informe sua senha atual para confirmar a mudança)</i><br />
+    <%= f.label :Senha_atual %> <i>(Informe sua senha atual para confirmar a mudança)</i><br />
     <%= f.password_field :current_password, autocomplete: "off",  id: 'inputPassword', class: 'form-control'  %>
   </div>
 
@@ -40,20 +40,20 @@
   <%= f.radio_button :avatar, 'icons/i1.png', :checked => true %>
   <%= image_tag("icons/i1.png", size: 70, class:"rounded-circle")%>
   </td><td>
-  <%= f.radio_button :avatar, 'icons/i2.png', :checked => true %>
+  <%= f.radio_button :avatar, 'icons/i2.png' %>
   <%= image_tag("icons/i2.png", size: 70, class:"rounded-circle")%>
   </td><td>
-  <%= f.radio_button :avatar, 'icons/i3.png', :checked => true %>
+  <%= f.radio_button :avatar, 'icons/i3.png' %>
   <%= image_tag("icons/i3.png", size: 70, class:"rounded-circle")%>
   </td></tr>
   <tr><td>
-  <%= f.radio_button :avatar, 'icons/i4.png', :checked => true %>
+  <%= f.radio_button :avatar, 'icons/i4.png' %>
   <%= image_tag("icons/i4.png", size: 70, class:"rounded-circle")%>
   </td><td>
-  <%= f.radio_button :avatar, 'icons/i5.png', :checked => true %>
+  <%= f.radio_button :avatar, 'icons/i5.png' %>
   <%= image_tag("icons/i5.png", size: 70, class:"rounded-circle")%>
   </td><td>
-  <%= f.radio_button :avatar, 'icons/i6.png', :checked => true %>
+  <%= f.radio_button :avatar, 'icons/i6.png' %>
   <%= image_tag("icons/i6.png", size: 70, class:"rounded-circle")%>
   </td></tr>
   </table>
