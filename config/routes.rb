@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   match '/users',   to: 'users#index',   via: 'get'
+  get '/pedidos/emprestar/:id', to: 'pedidos#emprestar', as: 'emprestar'
   devise_for :users
   resources :pedidos
   resources :disciplinas

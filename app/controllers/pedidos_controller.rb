@@ -1,13 +1,19 @@
 class PedidosController < ApplicationController
-  before_action :set_pedido, only: [:destroy]
+  before_action :set_pedido, only: [:destroy, :emprestar]
 
-  def create
+  def new
     @pedido = Pedido.new(pedido_params)
   end
 
   def index
   end
   def show
+  end
+
+  def emprestar
+    @caderno = Caderno.find(@pedido.caderno_id);
+    @caderno.user << User.find(@pedido.user_dest);
+    @pedido.destroy
   end
 
   def create

@@ -28,7 +28,9 @@
 	  			<% @cadernosDaDisciplina.each do |caderno| %>
 					    <tr style = "background: #32383e">
 					     	<td colspan ="1" class = "align-middle">Caderno: <%= caderno.titulo %></td>
+					     	<% if disciplina.user != current_user %>
 								<%= render 'form', pedido: @pedido, cadernoid: caderno.id, current_userid: current_user.id, usuarioAtualid: @usuarioAtual.id %>
+							<% end %>
 					<% end %>
 				<%end %>
 			<% end %>

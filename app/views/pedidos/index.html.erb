@@ -19,7 +19,7 @@
       <tr>
         <td>O usuário <%= User.find(pedido.user_dest).username %> está pedindo seu caderno <%= Caderno.find(pedido.caderno_id).titulo %> emprestado.</td>
         <td align = "right">
-          <%= link_to 'Emprestar', class: 'btn btn-md btn-light', style:'color: black; background: #b9a88e; margin-right: 20px' %>
+          <%= link_to 'Emprestar', emprestar_path(pedido), class: 'btn btn-md btn-light', style:'color: black; background: #b9a88e; margin-right: 20px' %>
           <%= link_to 'Não emprestar', pedido_path(pedido), method: :delete, class: 'btn btn-md btn-light', style:'color: black; background: red' %>
       </td>
       </tr>
