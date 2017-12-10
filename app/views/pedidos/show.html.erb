@@ -7,7 +7,7 @@
     <% current_user.caderno.each do |caderno| %>
       <% @contador = @contador+1 %>
   <% end %>
-  <% if @contador == 1 %>
+  <% if @contador == 0 %>
     <td colspan ="4">Não há cadernos emprestados.</td>
   <%else%>
   <tr>

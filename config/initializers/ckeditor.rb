@@ -9,17 +9,17 @@ Ckeditor.setup do |config|
   # Allowed image file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
-  # config.image_file_types = %w(jpg jpeg png gif tiff)
+  config.image_file_types = %w(jpg jpeg png gif tiff)
 
   # Allowed flash file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
-  # config.flash_file_types = %w(swf)
+  config.flash_file_types = %w(swf)
 
   # Allowed attachment file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(doc docx xls odt ods pdf rar zip tar tar.gz swf)
-  # config.attachment_file_types = %w(doc docx xls odt ods pdf rar zip tar tar.gz swf)
+  config.attachment_file_types = %w(doc docx xls odt ods pdf rar zip tar tar.gz swf)
 
   # Setup authorization to be run as a before filter
   # By default: there is no authorization.
@@ -55,4 +55,16 @@ Ckeditor.setup do |config|
   # Used when CKEditor CDN enabled
   # By default: "ckeditor/config.js"
   # config.js_config_url = 'ckeditor/config.js'
+
+  #handle custom addons
+  assets_root =  Rails.root.join('app','assets','javascripts')
+  ckeditor_plugins_root = assets_root.join('ckeditor','plugins')
+  %w(openlink sourcedialog).each do |ckeditor_plugin|
+    Ckeditor.assets += Dir[ckeditor_plugins_root.join(ckeditor_plugin, '**', '*.js')].map do |x|
+      x.sub(assets_root.to_path, '').sub(/^\/+/, '')
+    end
+  end
+  
+
+
 end
