@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171209181503) do
+ActiveRecord::Schema.define(version: 20171209221810) do
 
   create_table "cadernos", force: :cascade do |t|
     t.string "titulo"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20171209181503) do
     t.integer "user_id"
     t.index ["caderno_id"], name: "index_cadernos_users_on_caderno_id"
     t.index ["user_id"], name: "index_cadernos_users_on_user_id"
+  end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "type", limit: 30
+    t.integer "width"
+    t.integer "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
   create_table "disciplinas", force: :cascade do |t|

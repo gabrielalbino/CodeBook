@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   match '/users',   to: 'users#index',   via: 'get'
   get '/pedidos/emprestar/:id', to: 'pedidos#emprestar', as: 'emprestar'
   get '/pedidos/show', to: 'pedidos#show', as: 'emprestados'
