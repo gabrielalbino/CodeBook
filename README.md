@@ -1,24 +1,23 @@
-# README
+# CodeBook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Sobre o site:
 
-* System dependencies
+O CodeBook tem por objetivo proporcionar uma  plataforma diferente para fazer anotações escolares e acadêmicas.  Possui uma praticidade no uso, podendo adicionar várias coisas que não é possível em um caderno com folhas, como trechos de códigos, vídeos e imagens.
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+### Como utilizar:
 
-* How to run the test suite
+O usuário deve se registrar no site e assim terá acesso às opções de adicionar uma disciplina e criar um caderno que pertencerá à disciplina criada. 
 
-* Services (job queues, cache servers, search engines, etc.)
+O sistema provê também de serviços como procurar outros usuário que utilizem o site e ter a opção de pedir cadernos emprestados, o outro usuário então poderá permitir ou recusar. 
 
-* Deployment instructions
+Uma vez permitido, o outro usuário terá acesso ao caderno, sem as opções de excluir e editar. O usuário pode também editar seu perfil e excluir sua conta caso não esteja satisfeito com o serviço oferecido.
 
-* ...
+
+
+### Para acessar o site:
+
+Para acessar o site abra o terminal e dê o comando ***rails s***  e acesse o caminho ***http://localhost:3000/*** em seu navegador.
